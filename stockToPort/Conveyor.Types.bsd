@@ -1,0 +1,17 @@
+<opc:TypeDictionary
+  xmlns:opc="http://opcfoundation.org/BinarySchema/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:ua="http://opcfoundation.org/UA/"
+  xmlns:tns="http://example.com/ConveyorModel"
+  DefaultByteOrder="LittleEndian"
+  TargetNamespace="http://example.com/ConveyorModel"
+>
+  <opc:Import Namespace="http://opcfoundation.org/UA/" Location="Opc.Ua.BinarySchema.bsd"/>
+
+  <opc:StructuredType Name="LongwallShieldOffsetDataType" BaseType="ua:ExtensionObject">
+    <opc:Documentation>Tuple containing shield number and offset for longwall mining.</opc:Documentation>
+    <opc:Field Name="ShieldNumber" TypeName="opc:UInt16" />
+    <opc:Field Name="ShieldOffset" TypeName="opc:Double" />
+  </opc:StructuredType>
+
+</opc:TypeDictionary>

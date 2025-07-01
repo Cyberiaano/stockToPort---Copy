@@ -1,0 +1,34 @@
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ua="http://opcfoundation.org/UA/2008/02/Types.xsd"
+  xmlns:tns="http://example.com/ConveyorModel"
+  targetNamespace="http://example.com/ConveyorModel"
+  elementFormDefault="qualified"
+>
+  <xs:annotation>
+    <xs:appinfo>
+      <ua:Model ModelUri="http://example.com/ConveyorModel" Version="1.0.0" PublicationDate="2025-04-23T13:33:12.8817081Z" />
+    </xs:appinfo>
+  </xs:annotation>
+  
+  <xs:import namespace="http://opcfoundation.org/UA/2008/02/Types.xsd" />
+
+  <xs:complexType name="LongwallShieldOffsetDataType">
+    <xs:annotation>
+      <xs:documentation>Tuple containing shield number and offset for longwall mining.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="ShieldNumber" type="xs:unsignedShort" minOccurs="0" />
+      <xs:element name="ShieldOffset" type="xs:double" minOccurs="0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LongwallShieldOffsetDataType" type="tns:LongwallShieldOffsetDataType" />
+
+  <xs:complexType name="ListOfLongwallShieldOffsetDataType">
+    <xs:sequence>
+      <xs:element name="LongwallShieldOffsetDataType" type="tns:LongwallShieldOffsetDataType" minOccurs="0" maxOccurs="unbounded" nillable="true" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListOfLongwallShieldOffsetDataType" type="tns:ListOfLongwallShieldOffsetDataType" nillable="true"></xs:element>
+
+</xs:schema>
